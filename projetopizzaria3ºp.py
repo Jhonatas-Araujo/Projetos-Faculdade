@@ -11,10 +11,9 @@ temp = []
 def exibirOpcoes():
     print('\n\n')
     print('1 - Observar o cardápio')
-    print('2 - Remover pedido')
-    print('3 - Exibir produtos e o valor total')
-    print('4 - Limpar Carrinho de compras')
-    print('5 - Sair')
+    print('2 - Exibir produtos no carrinho e o valor total')
+    print('3 - Limpar Carrinho de compras')
+    print('4 - Sair')
 
 
 def exibirProdutos():
@@ -32,11 +31,11 @@ def obterNomeProduto(id):
             return p['sabor']
 
 
-while opcao != '5':
+while opcao != '4':
     exibirOpcoes()
     opcao = input('Digite a opção: ')
 
-    if opcao < '1' or opcao > '5':
+    if opcao < '1' or opcao > '4':
         print("Opção escolhida inválida!")
         print('Sistema encerrando...')
         break
@@ -49,15 +48,8 @@ while opcao != '5':
         quantidade = int(input('Digite a quantidade: '))
         carrinho.append({'id': id, 'quantidade': quantidade})
         temp.append({'id': id, 'quantidade': quantidade})
-        
-    if opcao == '2':
-        id = int(input('Digite o identificador do produto: '))
-        temp = []
-        for item in carrinho:
-            if item['id'] != id:
-                carrinho.append(item)
 
-    if opcao == '3':
+    if opcao == '2':
         print('\n\n')
         somatorio = 0
         for item in carrinho:
@@ -71,9 +63,8 @@ while opcao != '5':
                 'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
         print('Preço total: {0}'.format(somatorio))
 
-    if opcao == '4':
+    if opcao == '3':
         carrinho = []
-        temp = []
-    if opcao == '5':
+    if opcao == '4':
         print('Volte Sempre!')
         
