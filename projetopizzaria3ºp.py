@@ -1,8 +1,10 @@
 produtos = (
     {'id': 1, 'sabor': 'Calabresa', 'preco': 35},
-    {'id': 2, 'sabor': 'Frango com catupiry', 'preco': 38},
-    {'id': 3, 'sabor': 'Bacon', 'preco': 40},
-    {'id': 4, 'sabor': 'Carne de Sol', 'preco': 45}
+    {'id': 2, 'sabor': 'Quatro queijos', 'preco': 35},
+    {'id': 3, 'sabor': 'Portuguesa', 'preco': 36},
+    {'id': 4, 'sabor': 'Frango com catupiry', 'preco': 38},
+    {'id': 5, 'sabor': 'Bacon', 'preco': 40},
+    {'id': 6, 'sabor': 'Carne de Sol', 'preco': 45}
 )
 
 carrinho = []
@@ -40,14 +42,14 @@ while opcao != '4':
         print('Sistema encerrando...')
         break
     if opcao == '1':
+        print('\n\n')
         exibirProdutos()
         id = int(input('Digite o identificador do produto: '))
-        if id < 1 or id > 4:
+        if id < 1 or id > 6:
             print('ID do produto não indentificado!')
             break
         quantidade = int(input('Digite a quantidade: '))
         carrinho.append({'id': id, 'quantidade': quantidade})
-        temp.append({'id': id, 'quantidade': quantidade})
 
     if opcao == '2':
         print('\n\n')
