@@ -39,16 +39,25 @@ while opcao != '4':
 
     if opcao < '1' or opcao > '4':
         print("Opção escolhida inválida!")
-        print('Sistema encerrando...')
+        print('Encerrando sistema...')
         break
     if opcao == '1':
         print('\n\n')
         exibirProdutos()
+        print("Id: 7 - Para sair do sistema")
+        print()
         id = int(input('Digite o identificador do produto: '))
-        if id < 1 or id > 6:
+        if id == 7:
+            print("Encerrando sistema...")
+            break
+        if id < 1 or id > 7:
             print('ID do produto não indentificado!')
             break
+        
         quantidade = int(input('Digite a quantidade: '))
+        if quantidade < 1:
+            print('Valores negativos não são aceitos!')
+            break
         carrinho.append({'id': id, 'quantidade': quantidade})
 
     if opcao == '2':
