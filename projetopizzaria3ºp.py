@@ -17,7 +17,6 @@ def exibirOpcoes():
     print('3 - Limpar Carrinho de compras')
     print('4 - Sair')
 
-
 def exibirProdutos():
     for p in produtos:
         print(
@@ -26,17 +25,14 @@ def exibirProdutos():
 
 opcao = '1'
 
-
 def obterNomeProduto(id):
     for p in produtos:
         if p['id'] == id:
             return p['sabor']
 
-
 while opcao != '4':
     exibirOpcoes()
     opcao = input('Digite a opção: ')
-
     if opcao < '1' or opcao > '4':
         print("Opção escolhida inválida!")
         print('Encerrando sistema...')
@@ -52,14 +48,12 @@ while opcao != '4':
             break
         if id < 1 or id > 7:
             print('ID do produto não indentificado!')
-            break
-        
+            break      
         quantidade = int(input('Digite a quantidade: '))
         if quantidade < 1:
             print('Valores negativos não são aceitos!')
             break
         carrinho.append({'id': id, 'quantidade': quantidade})
-
     if opcao == '2':
         print('\n\n')
         somatorio = 0
@@ -73,9 +67,7 @@ while opcao != '4':
             print(
                 'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
         print('Preço total: {0}'.format(somatorio))
-
     if opcao == '3':
         carrinho = []
     if opcao == '4':
         print('Volte Sempre!')
-        
