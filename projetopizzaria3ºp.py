@@ -1,10 +1,10 @@
 produtos = (
-    {'id': 1, 'sabor': 'Calabresa', 'preco': 35},
-    {'id': 2, 'sabor': 'Quatro queijos', 'preco': 35},
-    {'id': 3, 'sabor': 'Portuguesa', 'preco': 36},
-    {'id': 4, 'sabor': 'Frango com catupiry', 'preco': 38},
-    {'id': 5, 'sabor': 'Bacon', 'preco': 40},
-    {'id': 6, 'sabor': 'Carne de Sol', 'preco': 45}
+    {'id': 1, 'sabor': 'Calabresa', 'preco': 35, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'},
+    {'id': 2, 'sabor': 'Quatro queijos', 'preco': 35, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'},
+    {'id': 3, 'sabor': 'Portuguesa', 'preco': 36, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'},
+    {'id': 4, 'sabor': 'Frango com catupiry', 'preco': 38, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'},
+    {'id': 5, 'sabor': 'Bacon', 'preco': 40, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'},
+    {'id': 6, 'sabor': 'Carne de Sol', 'preco': 45, 'receita': 'Molho de tomatem, mussarela, calabresa, cebola e óregano'}
 )
 
 carrinho = []
@@ -20,7 +20,7 @@ def exibirOpcoes():
 def exibirProdutos():
     for p in produtos:
         print(
-            'Id: {0} - Sabor: {1} - Preço: {2}\n'.format(p['id'], p['sabor'], p['preco']))
+            'Id: {0} - Sabor: {1} - Preço: {2} - Receita:{3} \n'.format(p['id'], p['sabor'], p['preco'], p['receita']))
 
 
 opcao = '1'
