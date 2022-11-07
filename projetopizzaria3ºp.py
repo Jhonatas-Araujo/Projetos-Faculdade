@@ -36,7 +36,8 @@ def obterNomeProduto(id):
 while opcao != '4':
     exibirOpcoes()
     opcao = input('Digite a opção: ')
-    if opcao < '1' or opcao > '10':
+    if opcao < '1' or opcao > '4':
+        print('\n')
         print("Opção escolhida inválida!")
         print('Encerrando sistema...')
         break
@@ -47,14 +48,18 @@ while opcao != '4':
         print()
         id = int(input('Digite o identificador do produto: '))
         if id == 10:
+            print('\n')
             print("Encerrando sistema...")
             break
         if id < 1 or id > 10:
+            print('\n')
             print('ID do produto não indentificado!')
+            print("Encerrando sistema...")
             break      
         quantidade = int(input('Digite a quantidade: '))
         if quantidade < 1:
             print('Esta quantidade não é aceita!')
+            print("Encerrando sistema...")
             break
         else:
             print('\n')
@@ -69,12 +74,14 @@ while opcao != '4':
                     somatorio = somatorio + \
                         (produto['preco'] * item['quantidade'])
                     break
-
             print(
                 'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
         print('Preço total: ${0}'.format(somatorio))
     if opcao == '3':
         carrinho = []
+        print('\n')
         print("Seu carrinho foi limpo!")
     if opcao == '4':
+        print('\n')
         print('Volte Sempre!')
+        break
