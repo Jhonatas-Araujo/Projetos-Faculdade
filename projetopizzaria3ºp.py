@@ -173,4 +173,61 @@ while opcao != '4':
     if opcao == '4':
         print('\n')
         print('Volte Sempre!')
-        break
+        
+        #sadasdasdasdas
+        print('\n\n')
+        print('''FORMAS DE PAGAMENTO
+
+[ 1 ] Chave Aleatória (PIX)
+[ 2 ] Cartão de Crédito/Débito
+[ 3 ] Dinheiro
+[ 4 ] Cancelar Pedido
+''')
+
+
+opção = int(input('Qual será a forma de pagamento?'))
+
+print("")
+if opção == 1:
+    print('QRCODE')
+    print("")
+    print('Copiar!')
+    print("\n")
+    print("Pedido realizado com sucesso!")
+    print('Agradeçemos pela preferência. Volte sempre!')
+
+if opção == 2:
+    print('''
+[ 1 ] Crédito
+[ 2 ] Débito)''')
+    debitocredito = int(input('Débito ou Crédito?')) 
+    
+    nomecar = input('Nome Impresso no cartão:'),
+    numerocar = input('Número do cartão:'),
+    validadecar = input('Validade: '),
+    cvccar = input('Código de Verificação:  '),
+    nasccar = input('Data de nascimento: '),
+    cpfcar = input('CPF do titular:')
+    print("Pedido realizado com sucesso!")
+    print('Agradeçemos pela preferência. Volte sempre!')
+if opção == 3:
+    print("O valor total da sua compra é de:R${0} ".format(somatorio))
+    print('''
+[ 1 ] Sim
+[ 2 ] Não''')
+    troco = int(input('Precisa de troco?')) 
+    if troco == 1:
+        troco1 = input("Para quanto?")
+        troco2 = troco1 - somatorio
+        print("seu troco será de:", troco2)
+        print("Pedido realizado com sucesso!")
+        print('Agradeçemos pela preferência. Volte sempre!')
+
+    if troco == 2:
+        print("Pedido realizado com sucesso!")
+        print('Agradeçemos pela preferência. Volte sempre!')
+
+
+if opção == 4:
+    print("Pedido Cancelado!")
+    print("Volte Sempre!")
