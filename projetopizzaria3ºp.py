@@ -38,28 +38,34 @@ def cadastro_login():
     print(f"Número:",numerolocal)
     print(f"Complemento:",comp)
 
-    editare = int(input("\nENDEREÇO CORRETO? Se dedeja editar digite [1], se não digite [0]: \n"))
+    editare = 1
+    while editare != 0:
+        editare = int(input("\nENDEREÇO CORRETO? Se dedeja editar digite [1], se não digite [0]: \n"))
+        if editare == 1:   
+            print("            ▐░░░░░░░░ EDITAR ENDEREÇO ░░░░░░░░\n")
+            print("DESEJA EDITAR CEP?    DIGITE  [1]")
+            print("DESEJA EDITAR BARRO?  DIGITE  [2]")
+            print("DESEJA EDITAR RUA?    DIGITE  [3]")
+            print("DESEJA EDITAR NÚMERO? DIGITE  [4]")
+            print("DESEJA EDITAR COMP?   DIGITE  [5]")
 
-    if editare == 1:   
-        print("            ▐░░░░░░░░ EDITAR ENDEREÇO ░░░░░░░░\n")
-        print("DESEJA EDITAR CEP?    DIGITE  [1]")
-        print("DESEJA EDITAR BARRO?  DIGITE  [2]")
-        print("DESEJA EDITAR RUA?    DIGITE  [3]")
-        print("DESEJA EDITAR NÚMERO? DIGITE  [4]")
-        print("DESEJA EDITAR COMP?   DIGITE  [5]")
+            editarem = int(input("Digite um número: "))
 
-        editarem = int(input("Digite um número: "))
-
-        if editarem == 1:
-            cep = input("Digite o novo CEP: ")
-        elif editarem == 2:
-            bairro = input("Digite o novo bairro: ")
-        elif editarem == 3:
-            rua = input("Digite a nova rua: ")    
-        elif editarem == 4:
-            numerolocal = input("Digite o novo número: ")
-        elif editarem == 5:
-            comp = input("Digite o novo complemento: ")
+            if editarem == 1:
+                cep = input("Digite o novo CEP: ")
+            if editarem == 2:
+                bairro = input("Digite o novo bairro: ")
+            if editarem == 3:
+                rua = input("Digite a nova rua: ")    
+            if editarem == 4:
+                numerolocal = input("Digite o novo número: ")
+            if editarem == 5:
+                comp = input("Digite o novo complemento: ")
+        if editare == 0:
+            print('\n')
+        if editare < 0 or editare > 1:
+            print("Opção escolhida inválida!")
+            break
         
         print("\n∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎ ENDEREÇO REGISTRADO ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎\n")
         print(f"CEP:",cep)
