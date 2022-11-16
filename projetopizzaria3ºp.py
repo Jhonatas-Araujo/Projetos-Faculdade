@@ -215,7 +215,7 @@ if opção == 3:
     print('''
 [ 1 ] Sim
 [ 2 ] Não''')
-    troco = int(input('Precisa de troco?')) 
+    troco = int(input('Precisa de troco?'))
     if troco == 1:
         troco1 = input("Para quanto?")
         troco2 = troco1 - somatorio
