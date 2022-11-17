@@ -1,4 +1,8 @@
 import getpass
+import qrcode
+
+
+
 
 def cadastro_login():
 
@@ -10,7 +14,7 @@ def cadastro_login():
     nome = str(input("- Digite seu nome completo: "))
     cpf = input("- Digite seu CPF: ") 
     cpf = '{}.{}.{}-{}'.format(cpf[:3], cpf[3:6], cpf[6:9], cpf[9:])
-    datanasc = input("- Digite o dia de nascimento (01 a 31): ") ,input("- Digite o mês de nascimento (01 a 12): ") ,input("- Digite o ano de nascimento: ")
+    datanasc = input("- Digite o dia de nascimento: ") ,input("- Digite o mês de nascimento: ") ,input("- Digite o ano de nascimento: ")
     email = (input("- Digite seu email: "))
     telefone = (input("- Digite seu telefone de contato: "))
     senha = getpass.getpass("- Digite uma senha para sua conta: ")
@@ -91,7 +95,7 @@ def cadastro_login():
 cadastro_login()
 
 
-
+#CARDAPIO
 
 produtos = (
     {'id': 1, 'sabor': 'Calabresa', 'preco': 35.00, 'receita': 'Molho de tomate, muçarela, calabresa, cebola e óregano'},
@@ -113,7 +117,7 @@ def exibirOpcoes():
     print('1 - Observar o cardápio')
     print('2 - Exibir produtos no carrinho')
     print('3 - Limpar Carrinho de compras')
-    print('4 - Sair')
+    print('4 - Finalizar compra')
 
 def exibirProdutos():
     for p in produtos:
@@ -178,9 +182,8 @@ while opcao != '4':
         print("Seu carrinho foi limpo!")
     if opcao == '4':
         print('\n')
-        print('Volte Sempre!')
         
-        #sadasdasdasdas
+#FORMA DE PAGAMENTO    
         print('\n\n')
         print('''FORMAS DE PAGAMENTO
 
@@ -191,22 +194,54 @@ while opcao != '4':
 ''')
 
 
-opção = int(input('Qual será a forma de pagamento?'))
+opção = int(input('Qual será a forma de pagamento? '))
 
 print("")
 if opção == 1:
+    somatorio = 0
+    for item in carrinho:
+        for produto in produtos:
+            if produto['id'] == item['id']:
+                somatorio = somatorio + \
+                    (produto['preco'] * item['quantidade'])
+                break
+           
+    print('Preço total: ${0}'.format(somatorio))
     print('QRCODE')
     print("")
     print('Copiar!')
     print("\n")
     print("Pedido realizado com sucesso!")
+    somatorio = 0
+    for item in carrinho:
+            for produto in produtos:
+                if produto['id'] == item['id']:
+                    somatorio = somatorio + \
+                        (produto['preco'] * item['quantidade'])
+                    break
+            print(
+                'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
+    print("")
     print('Agradeçemos pela preferência. Volte sempre!')
+    
+    
 
 if opção == 2:
+    somatorio = 0
+    for item in carrinho:
+        for produto in produtos:
+            if produto['id'] == item['id']:
+                somatorio = somatorio + \
+                    (produto['preco'] * item['quantidade'])
+                break
+           
+    print('Preço total: ${0}'.format(somatorio))
     print('''
 [ 1 ] Crédito
 [ 2 ] Débito)''')
-    debitocredito = int(input('Débito ou Crédito?')) 
+    
+    debitocredito = int(input('Débito ou Crédito?'))
+     
     
     nomecar = input('Nome Impresso no cartão:'),
     numerocar = input('Número do cartão:'),
@@ -214,25 +249,63 @@ if opção == 2:
     cvccar = input('Código de Verificação:  '),
     nasccar = input('Data de nascimento: '),
     cpfcar = input('CPF do titular:')
+    print("")
     print("Pedido realizado com sucesso!")
+    somatorio = 0
+    for item in carrinho:
+            for produto in produtos:
+                if produto['id'] == item['id']:
+                    somatorio = somatorio + \
+                        (produto['preco'] * item['quantidade'])
+                    break
+            print(
+                'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
+    print("")
     print('Agradeçemos pela preferência. Volte sempre!')
 if opção == 3:
-    print("O valor total da sua compra é de:R${0} ".format(somatorio))
+    somatorio = 0
+    for item in carrinho:
+        for produto in produtos:
+            if produto['id'] == item['id']:
+                somatorio = somatorio + \
+                    (produto['preco'] * item['quantidade'])
+                break
+           
+    print('Preço total: ${0}'.format(somatorio))
+    print("")
     print('''
 [ 1 ] Sim
 [ 2 ] Não''')
-    troco = int(input('Precisa de troco?'))
+    troco = int(input('Precisa de troco? '))
     if troco == 1:
-        troco1 = input("Para quanto?")
-        troco2 = troco1 - somatorio
-        print("seu troco será de:", troco2)
+        troco1 = input("Para quanto? ")
+        print("Certo!")
         print("Pedido realizado com sucesso!")
+        somatorio = 0
+        for item in carrinho:
+            for produto in produtos:
+                if produto['id'] == item['id']:
+                    somatorio = somatorio + \
+                        (produto['preco'] * item['quantidade'])
+                    break
+            print(
+                'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
+        print("")
         print('Agradeçemos pela preferência. Volte sempre!')
 
     if troco == 2:
         print("Pedido realizado com sucesso!")
+        somatorio = 0
+        for item in carrinho:
+            for produto in produtos:
+                if produto['id'] == item['id']:
+                    somatorio = somatorio + \
+                        (produto['preco'] * item['quantidade'])
+                    break
+            print(
+                'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
+        print("")
         print('Agradeçemos pela preferência. Volte sempre!')
-
 
 if opção == 4:
     print("Pedido Cancelado!")
