@@ -117,7 +117,9 @@ def exibirOpcoes():
     print('1 - Observar o cardápio')
     print('2 - Exibir produtos no carrinho')
     print('3 - Limpar Carrinho de compras')
-    print('4 - Finalizar compra')
+    print('4 - Contatos')
+    print('5 - Avalie nossos serviços')
+    print('6 - Finalizar compra')
 
 def exibirProdutos():
     for p in produtos:
@@ -132,10 +134,10 @@ def obterNomeProduto(id):
         if p['id'] == id:
             return p['sabor']
 
-while opcao != '4':
+while opcao != '6':
     exibirOpcoes()
     opcao = input('Digite a opção: ')
-    if opcao < '1' or opcao > '4':
+    if opcao < '1' or opcao > '6':
         print('\n')
         print("Opção escolhida inválida!")
         print('Encerrando sistema...')
@@ -152,7 +154,7 @@ while opcao != '4':
             break
         if id < 1 or id > 10:
             print('\n')
-            print('ID do produto não indentificado!')
+            print('!ID do produto não indentificado')
             print("Encerrando sistema...")
             break      
         quantidade = int(input('Digite a quantidade: '))
@@ -180,7 +182,24 @@ while opcao != '4':
         carrinho = []
         print('\n')
         print("Seu carrinho foi limpo!")
+        
     if opcao == '4':
+        print('Whats: 98 987523927')
+        print('Insta: @pizzadosmaisnovo')
+        print('Twitter: @pizzadosmaisnovo')
+        print('Tik Tok: @pizzadosmaisnovo')
+    if opcao == '5':
+            ava = int(input("Qual nota para o Atendimento(0 a 5): "))
+            if ava < 0 or ava > 5:
+                print('Valor inválido')
+            avc = int(input("Qual nota para a Comida(0 a 5): "))
+            if avc < 0 or avc > 5:
+                print('Valor inválido')
+            ave = int(input("Qual nota para a Entrega(0 a 5): "))
+            if ave < 0 or ave > 5:
+                print('Valor inválido')
+            
+    if opcao == '6':
         print('\n')
         
 #FORMA DE PAGAMENTO    
@@ -221,9 +240,8 @@ if opção == 1:
                     break
             print(
                 'Sabor: {0} - Quantidade: {1}'.format(obterNomeProduto(item['id']), item['quantidade']))
-    print("")
-    print('Agradeçemos pela preferência. Volte sempre!')
-    
+            print("")
+            print('Agradeçemos pela preferência. Volte sempre!')
     
 
 if opção == 2:
